@@ -7,6 +7,11 @@ const PAGE_SIZE = 1000;
 // Example:
 //
 // node cipherstash-encrypt.js User full_name email dob
+if (process.argv.length < 4) {
+    console.error("Usage: node script.js <modelName> <field1> <field2> ...");
+    process.exit(1);
+}
+
 const modelName = process.argv[2];
 const fieldsToChange = process.argv.slice(3);
 
